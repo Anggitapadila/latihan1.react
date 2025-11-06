@@ -1,0 +1,431 @@
+/* Styling untuk root element, mengatur lebar, margin, padding, dan transisi */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema terang dengan gradien biru muda */
+.light-theme {
+  background: linear-gradient(135deg, #f5f7fa 0%, #2f78ec 100%);
+  color: #333;
+}
+
+/* Tema gelap dengan gradien biru tua */
+.dark-theme {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #0b0b0b;
+}
+
+/* Styling utama untuk komponen App, menggunakan flexbox untuk layout vertikal */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Styling untuk judul dengan warna biru dan animasi bounce */
+.title {
+  color: #353ee8;
+  animation: bounce 2s infinite;
+}
+
+/* Keyframe animasi bounce untuk judul */
+@keyframes bounce {
+  0%, 10%, 20%, 60%, 0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Styling untuk kartu form dengan padding, border, dan gradien background */
+.card {
+  padding: 2em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Styling dasar untuk input dengan padding dan border */
+input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Styling untuk input saat fokus, menambah border dan shadow */
+input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.5);
+}
+
+/* Styling dasar untuk button dengan background biru dan transisi */
+button {
+  padding: 0.5rem 1rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Styling untuk button saat hover, mengubah warna dan menambah scale */
+button:hover {
+  background-color: #535bf2;
+  transform: scale(1.05);
+}
+
+/* Styling khusus untuk tombol remove dengan background putih dan warna hitam */
+.remove-btn {
+  background-color: white;
+  color: black;
+  margin-left: 0.5rem;
+  padding: 0.70rem 0.70rem;
+  font-size: 0.8rem;
+  border: 1px solid #ccc;
+}
+
+/* Styling untuk tombol remove saat hover, mengubah background ke orange */
+.remove-btn:hover {
+  background-color: #f57c00;
+}
+
+/* Styling untuk teks salam dengan warna biru dan italic */
+.read-the-docs {
+  color: #5fadf0;
+  font-style: italic;
+  transition: all 0.3s ease;
+}
+
+/* Styling untuk teks salam saat animasi, mengubah warna, ukuran, dan menambah animasi fadeIn */
+.read-the-docs.animate {
+  color: #646cff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Keyframe animasi fadeIn untuk teks salam */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling untuk container daftar nama dengan margin, padding, border, dan gradien */
+.names-list {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #10598c 0%, #bbdefb 100%);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Styling untuk heading h3 di dalam names-list */
+.names-list h3 {
+  margin-top: 0;
+  color: #1976d2;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Styling untuk tabel daftar nama dengan border-collapse dan background */
+.names-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  min-width: 600px;
+  border: 2px solid #e9ecef;
+}
+
+/* Styling untuk th dan td di tabel dengan padding dan border */
+.names-table th,
+.names-table td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+/* Styling khusus untuk th dengan background gradien dan warna putih */
+.names-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 1rem 0.75rem;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+/* Styling untuk td dengan text-align left */
+.names-table td {
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Styling untuk baris tabel saat hover, mengubah background */
+.names-table tr:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk td terakhir di setiap baris, text-align center */
+.names-table td:last-child {
+  text-align: center;
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Menghilangkan border-bottom untuk td di baris terakhir */
+.names-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styling untuk tombol toggle tema, diposisikan absolute di kanan atas */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk tombol toggle tema saat hover */
+.theme-toggle:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling untuk header tabel, menggunakan flexbox untuk justify space-between */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Styling untuk h3 di table-header, margin 0 */
+.table-header h3 {
+  margin: 0;
+}
+
+/* Styling untuk tombol clear all dengan background orange */
+.clear-all-btn {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk tombol clear all saat hover */
+.clear-all-btn:hover {
+  background: linear-gradient(135deg, #f57c00 0%, #ff9800 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling untuk tombol logout di tabel */
+.logout-btn-table {
+  background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk tombol logout di tabel saat hover */
+.logout-btn-table:hover {
+  background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling untuk tombol proceed */
+.proceed-btn {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+/* Styling untuk tombol proceed saat hover */
+.proceed-btn:hover {
+  background-color: #45a049;
+}
+
+/* Styling untuk pratinjau daftar hadir */
+.attendance-preview {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.attendance-preview h3 {
+  margin-top: 0;
+  color: #667eea;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.attendance-preview ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attendance-preview li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.attendance-preview li:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.attendance-preview li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.attendance-preview li span {
+  font-weight: 500;
+  color: #495057;
+}
+
+.attendance-preview li img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 2px solid #dee2e6;
+  transition: transform 0.3s ease;
+}
+
+.attendance-preview li img:hover {
+  transform: scale(1.1);
+}
+
+/* Styling untuk select absensi */
+.attendance-select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.attendance-select:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.5);
+}
+
+/* Styling untuk opsi dalam select */
+.attendance-select option {
+  padding: 0.5rem;
+}
+
+/* Styling khusus untuk opsi Hadir */
+.attendance-select option[value="Hadir"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Styling khusus untuk opsi Izin */
+.attendance-select option[value="Izin"] {
+  background-color: #ff9800;
+  color: white;
+}
+
+/* Styling khusus untuk opsi Sakit */
+.attendance-select option[value="Sakit"] {
+  background-color: #f44336;
+  color: white;
+}
