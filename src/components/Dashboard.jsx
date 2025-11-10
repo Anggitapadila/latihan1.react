@@ -50,9 +50,8 @@ function Dashboard() {
             <tr>
               <th>No</th>
               <th>Nama</th>
-              <th>Absensi</th>
+              <th>Absen</th>
               <th>Foto</th>
-              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -65,12 +64,11 @@ function Dashboard() {
                   <td>
                     {item.photo && <img src={item.photo} alt="Foto" style={{ width: '50px', height: '50px' }} />}
                   </td>
-                  <td>{item.status}</td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="5" style={{ textAlign: 'center', color: '#888' }}>
+                <td colSpan="4" style={{ textAlign: 'center', color: '#888' }}>
                   Belum ada data absensi.
                 </td>
               </tr>
