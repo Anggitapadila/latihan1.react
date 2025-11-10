@@ -340,51 +340,75 @@ button:hover {
   letter-spacing: 1px;
 }
 
-.attendance-preview ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+/* Styling untuk tabel pratinjau */
+.preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  min-width: 300px;
+  border: 2px solid #e9ecef;
 }
 
-.attendance-preview li {
-  padding: 0.75rem 1rem;
+/* Styling untuk th dan td di tabel pratinjau */
+.preview-table th,
+.preview-table td {
+  padding: 0.75rem 0.5rem;
   border-bottom: 1px solid #e9ecef;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Styling khusus untuk th di tabel pratinjau */
+.preview-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+/* Styling untuk td di tabel pratinjau */
+.preview-table td {
+  vertical-align: middle;
+}
+
+/* Styling untuk baris tabel pratinjau saat hover */
+.preview-table tr:hover {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transform: scale(1.01);
   transition: all 0.3s ease;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.attendance-preview li:hover {
-  background: linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);
-  transform: translateX(5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Styling untuk td terakhir di setiap baris tabel pratinjau */
+.preview-table td:last-child {
+  text-align: center;
 }
 
-.attendance-preview li:last-child {
+/* Menghilangkan border-bottom untuk td di baris terakhir tabel pratinjau */
+.preview-table tbody tr:last-child td {
   border-bottom: none;
-  margin-bottom: 0;
 }
 
-.attendance-preview li span {
-  font-weight: 500;
-  color: #495057;
-}
-
-.attendance-preview li img {
-  width: 40px;
-  height: 40px;
+/* Styling untuk gambar di tabel pratinjau */
+.preview-table img {
+  width: 50px;
+  height: 50px;
   border-radius: 6px;
   object-fit: cover;
   border: 2px solid #dee2e6;
   transition: transform 0.3s ease;
 }
 
-.attendance-preview li img:hover {
+.preview-table img:hover {
   transform: scale(1.1);
 }
 
