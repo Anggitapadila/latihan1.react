@@ -45,7 +45,7 @@ function Dashboard() {
           <h3>Daftar Hadir:</h3>
           <button className="logout-btn-table" onClick={handleLogout}>Logout</button>
         </div>
-        <table className="names-table">
+        <table className="preview-table">
           <thead>
             <tr>
               <th>No</th>
