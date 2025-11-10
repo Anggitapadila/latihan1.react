@@ -88,14 +88,26 @@ function Login() {
       {attendanceList.length > 0 && (
         <div className="attendance-preview">
           <h3>Pratinjau Daftar Hadir:</h3>
-          <ul>
-            {attendanceList.map((item, index) => (
-              <li key={index}>
-                <span>{item.name} - {item.attendance}</span>
-                {item.photo && <img src={item.photo} alt="Foto" />}
-              </li>
-            ))}
-          </ul>
+          <table className="preview-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Absen</th>
+                <th>Foto</th>
+              </tr>
+            </thead>
+            <tbody>
+              {attendanceList.map((item, index) => (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{item.attendance}</td>
+                  <td>
+                    {item.photo && <img src={item.photo} alt="Foto" style={{ width: '50px', height: '50px' }} />}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
