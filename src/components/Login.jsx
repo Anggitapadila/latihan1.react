@@ -51,8 +51,14 @@ function Login() {
 
   return (
     <div className="App">
-      <h1>Daftar Hadir</h1>
-      <p>Silahkan Isi Daftar Kehadiran Anda</p>
+      <header className="header">
+        <div className="header-content">
+          <div className="header-text">
+            <h1>Daftar Hadir</h1>
+            <p>Silahkan Isi Daftar Kehadiran Anda</p>
+          </div>
+        </div>
+      </header>
       <form onSubmit={handleSubmit} className="card">
         <input
           type="text"

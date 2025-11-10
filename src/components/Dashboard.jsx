@@ -27,11 +27,19 @@ function Dashboard() {
 
   return (
     <div className={`App ${isDarkTheme ? 'dark-theme' : 'light-theme'}`}>
-      <button className="theme-toggle" onClick={toggleTheme}>
-        {isDarkTheme ? '☀️ Light Mode' : '🌙 Dark Mode'}
-      </button>
-      <h1 className="title">Dashboard Daftar Hadir</h1>
-      <p>Data absensi yang telah diinput.</p>
+      <header className="header">
+        <div className="header-content">
+          <div className="header-text">
+            <h1 className="title">Dashboard Daftar Hadir</h1>
+            <p>Data absensi yang telah diinput.</p>
+          </div>
+          <div className="header-actions">
+            <button className="theme-toggle" onClick={toggleTheme}>
+              {isDarkTheme ? '☀️ Light Mode' : '🌙 Dark Mode'}
+            </button>
+          </div>
+        </div>
+      </header>
       <div className="names-list">
         <div className="table-header">
           <h3>Daftar Hadir:</h3>
