@@ -92,6 +92,7 @@ function Login() {
             <thead>
               <tr>
                 <th>No</th>
+                <th>Nama</th>
                 <th>Absen</th>
                 <th>Foto</th>
               </tr>
@@ -100,6 +101,7 @@ function Login() {
               {attendanceList.map((item, index) => (
                 <tr key={index}>
                   <td>{index + 1}</td>
+                  <td>{item.name}</td>
                   <td>{item.attendance}</td>
                   <td>
                     {item.photo && <img src={item.photo} alt="Foto" style={{ width: '50px', height: '50px' }} />}
