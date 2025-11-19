@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Product from "./components/product";
+import Product from "./components/Product";
 import ProductAbout from "./components/ProductAbout";
 import AddProduct from "./components/AddProduct";
 import Home from "./components/Home";
@@ -11,6 +11,7 @@ import Login from "./components/Login";
 
 import { ProductProvider } from "./contexts/ProductContext.jsx";
 
+// routing app
 function App() {
   return (
     <ProductProvider>
