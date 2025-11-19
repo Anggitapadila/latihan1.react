@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ProductContext } from "../contexts/ProductContext.jsx";
 import "../App.css";
 
 function AddProduct() {
   const navigate = useNavigate();
+  const { addProduct } = useContext(ProductContext);
   const [product, setProduct] = useState({
     title: "",
     description: "",
     price: "",
     category: "",
-    thumbnail: "",
+    thumbnail: null,
   });
 
   // Menangani perubahan input
@@ -18,12 +20,35 @@ function AddProduct() {
     setProduct({ ...product, [name]: value });
   };
 
+  // Menangani upload file gambar
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProduct({ ...product, thumbnail: imageUrl });
+    }
+  };
+
   // Menangani submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Produk ditambahkan:", product);
-    alert("✅ Produk berhasil ditambahkan (simulasi dummy data)");
-    navigate("/"); // kembali ke halaman produk
+
+    fetch('https://dummyjson.com/products/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(product)
+    })
+    .then(res => res.json())
+    .then(result => {
+      console.log("Produk ditambahkan:", result);
+      addProduct(result); // Update context
+      alert("✅ Produk berhasil ditambahkan!");
+      navigate("/"); // kembali ke halaman produk
+    })
+    .catch(error => {
+      console.error("Error menambahkan produk:", error);
+      alert("❌ Gagal menambahkan produk. Silakan coba lagi.");
+    });
   };
 
   // Tombol batal → kembali ke halaman utama (dashboard)
@@ -71,11 +96,10 @@ function AddProduct() {
           required
         />
         <input
-          type="text"
+          type="file"
           name="thumbnail"
-          placeholder="URL Gambar Produk"
-          value={product.thumbnail}
-          onChange={handleChange}
+          accept="image/*"
+          onChange={handleFileChange}
         />
 
         <button type="submit" className="save-btn">

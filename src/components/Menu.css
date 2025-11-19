@@ -1,0 +1,133 @@
+/* === Menu Navigasi === */
+.app-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.menu-logo h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.menu-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-btn:active {
+  transform: translateY(0);
+}
+
+.menu-info {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  white-space: nowrap;
+}
+
+/* === Media Queries === */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .menu-list {
+    gap: 10px;
+  }
+
+  .menu-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .menu-logo h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app-menu {
+    padding: 10px 15px;
+  }
+
+  .menu-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-list {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    flex: 1;
+    min-width: 80px;
+  }
+
+  .menu-logo h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
