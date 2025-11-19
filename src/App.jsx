@@ -11,7 +11,7 @@ import Login from "./components/Login";
 
 import { ProductProvider } from "./contexts/ProductContext.jsx";
 
-// routing app
+// routing all app 
 function App() {
   return (
     <ProductProvider>
